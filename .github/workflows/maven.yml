@@ -17,3 +17,8 @@ jobs:
           cache: 'maven'
       - name: Maven build
         run: mvn -B clean install
+      - name: Upload articats
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifact_${{github.run_number}}
+          path: /home/runner/work/keycloak-extentions/keycloak-extentions/captcha/target/dasniko.keycloak-captcha.jar
